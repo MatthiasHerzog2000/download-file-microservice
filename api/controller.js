@@ -6,7 +6,6 @@ var zip = require("../service/archive_folder");
 
 var controllers = {
   downloadFile: async function(req, res) {
-    console.log(req.body);
     var path = req.body.path;
     if (req.body.type === "directory") {
       var success = await zip.zipDirectory(path, req.body.path + ".zip");
